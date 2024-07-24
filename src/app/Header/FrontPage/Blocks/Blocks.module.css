@@ -1,0 +1,74 @@
+.blocks{
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+    gap: 30px;
+    margin: 50px 30px;
+    justify-content: space-around;
+}
+.block{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    width: 300px;
+    font-size: 14px;
+    /* height: 300px; */
+    row-gap: 20px;
+    z-index: 2;
+}
+.block>a{
+    margin-top: 10px;
+}
+
+.fourXfour{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 10px; */
+    row-gap: 25px;
+}
+.fourXfour>div>img{
+    width: 145px;
+}
+.one>div>img{
+    width: 100%;
+}
+
+
+
+
+.oneAndThree {
+    display: flex;
+    row-gap: 25px;
+    flex-direction: column;
+}
+.singleImage img{
+    width: 100%;
+}
+.tripleImages {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-around; 
+}
+.tripleImages img {
+    width: 100%; 
+}
+
+
+
+
+
+.block>div>div>p, .oneAndThree>div>div>p{
+    font-size: 11px;
+    font-weight: 500;
+    color: #555;
+}
+.block>a{
+    text-decoration: none;
+    color: #218395;
+    font-size: smaller;
+}
+.block>a:hover{
+    color: rgb(235, 118, 76);
+}
