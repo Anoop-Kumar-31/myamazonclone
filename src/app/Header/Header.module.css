@@ -1,6 +1,6 @@
 .header{
     height: 40px;
-    position: sticky;
+    position: static;
     display: flex;
     /* justify-content: start; */
     background-color: #131921;

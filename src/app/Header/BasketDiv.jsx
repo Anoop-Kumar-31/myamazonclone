@@ -5,8 +5,8 @@ export default function BasketDiv(){
     const {BasketData, setBasketData} = useContext(Basket);
     const len=BasketData.length;
     return(
-        <a href="">
-            <div className={css.inner}>
+        <a href="/Checkout">
+            <div className={css.inner} onClick={(e)=>{e.preventDefault()}}>
                 <p>{len}</p>
                 <p>Cart</p>
             </div>

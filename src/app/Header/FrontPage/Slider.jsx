@@ -45,7 +45,7 @@ export default function Slider() {
     "images/Toys.jpg",
     "https://images-eu.ssl-images-amazon.com/images/G/31/img23/Beauty/GW/Makeup-PCfdfo._CB554430294_.jpg",
   ];
-
+  
   const handlePrev = () => {
     const newIndex = (currentIndex - 1 + listImg.length) % listImg.length;
     setCurrentIndex(newIndex);
