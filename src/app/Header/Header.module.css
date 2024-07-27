@@ -1,3 +1,9 @@
+.main{
+    position: sticky;
+    top: 0;
+    width:100%;
+    z-index: 1000;
+}
 .header{
     height: 40px;
     position: static;
@@ -31,7 +37,7 @@
     font-weight: 400;
 }
 .inner>p{
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     /* text-decoration: none; */
 }

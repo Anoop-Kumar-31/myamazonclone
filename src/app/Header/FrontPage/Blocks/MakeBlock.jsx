@@ -1,18 +1,18 @@
 import css from './Blocks.module.css';
 export default function Make4x4Block({list}){
     const style=list[Object.keys(list)[1]];
-    console.log(list[Object.keys(list)[0]][0].url);
+    // console.log(list[Object.keys(list)[0]][0].url);
     // console.log(list[Object.keys(list)[0]]);
     return(
         style=='oneAndThree' ? (
         <section className={css.block}>
             <h1>{Object.keys(list)[0]}</h1>
-            <div class={css.oneAndThree}>
-                <div class={css.singleImage}>
+            <div className={css.oneAndThree}>
+                <div className={css.singleImage}>
                     <img src={list[Object.keys(list)[0]][0].url} alt="Image 1"/>
                     <p>{list[Object.keys(list)[0]][0].name}</p>
                 </div>
-                <div class={css.tripleImages}>
+                <div className={css.tripleImages}>
                     <div>
                         <img src={list[Object.keys(list)[0]][1].url} alt="Image 2"/>
                         <p>{list[Object.keys(list)[0]][1].name}</p>

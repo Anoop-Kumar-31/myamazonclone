@@ -1,34 +1,46 @@
 'use client';
 import css from "./Header.module.css";
+import NavBar from "./NavBar/NavBar";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import SearchBar from "./SearchBar";
 import { useEffect, useState } from "react";
 import { auth } from "../Login/firebasesection";
-import BasketDiv from './BasketDiv'
+import BasketDiv from './BasketDiv';
+import { checkoutContext } from "../page";
+import { useContext } from "react";
+// import {auth} from "../Login/firebasesection";
+
 export default function Header() {
-    const [user,setUser] = useState(false);
-    const logout=()=>{
-        if(user){
+    const { setIsCheckOut } = useContext(checkoutContext);
+    const user = auth.currentUser;
+    
+    const logout = () => {
+        if (user) {
             auth.signOut();
             alert("You have been signed out");
-            setUser(false);
         }
     }
-    useEffect(()=>{
-        auth.onAuthStateChanged(authUser=>{
-            console.log("user is >> ",!authUser);
-            try{
-                if(!authUser["emailVerified"]){
-                    setUser(true);
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(authUser => {
+            console.log("user is >> ", !authUser);
+            try {
+                if (!authUser["emailVerified"]) {
+                    authUser.sendEmailVerification();
+                    alert("Please verify your email");
                 }
-            }catch(e){
-                setUser(false);
+            } catch (e) {
+                console.error(e);
             }
-        },[]);
-    });
+        });
+
+        return () => unsubscribe();
+    }, [auth]);
+
     return(
+        <main className={css.main}>
         <header className={css.header}>
-            <div className={css.header_logo}>
+            <div className={css.header_logo} onClick={()=>{setIsCheckOut(false)}}>
                 <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Amazon Logo" />
             </div>
             <div className={css.outer}>
@@ -60,5 +72,7 @@ export default function Header() {
                 <BasketDiv/>
             </div>
         </header>
+        <NavBar/>
+        </main>
     )
 }

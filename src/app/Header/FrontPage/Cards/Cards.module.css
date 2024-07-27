@@ -1,17 +1,17 @@
 .cardscollection{
     display: flex;
-    justify-content: space-between;
-    margin: 0 20px;
+    justify-content: center;
+    margin: 30px 30px;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 33px;
 }
 .card{
     display: flex;
     flex-direction: column;
     background-color: white;
     width:300px;
-    padding: 30px;
-    gap: 30px;
+    padding: 20px;
+    gap: 10px;
 }
 .card>img{
     width: 100%;
@@ -19,11 +19,11 @@
     object-fit: contain;
 }
 .card>h3{
-    font-size: 18px;
+    font-size: 15px;
     font-weight: normal;
 }
 .card>h4{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
 }
 .card>button{
@@ -35,4 +35,5 @@
     padding: 8px 0;
     border-radius: 5px;
     width: 100%;
+    box-shadow: #a6a6a6 0px 2px 8px -4px;
 }

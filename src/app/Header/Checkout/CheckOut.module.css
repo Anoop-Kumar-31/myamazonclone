@@ -1,0 +1,203 @@
+.checkOut{
+    display: flex;
+    margin:30px 20px;
+    gap:20px;
+}
+.itemsSection{
+    flex:0.8;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    background-color: white;
+    /* margin-right: 18px; */
+}
+.itemsSection>h1{
+    font-size: xx-large;
+    font-weight:500;
+    /* margin-bottom:15px; */
+}
+.itemsSection>p{
+    color: #a6a6a6;
+    /* align-self:flex-end; */
+    /* width: 50%; */
+    direction: rtl;
+    padding: 0 35px 10px 0;
+    border-bottom: 1px solid lightgray;
+}
+.item{
+    display: flex;
+    /* margin-bottom: 20px; */
+    padding-bottom: 20px;
+    /* border-bottom: 1px solid lightgray; */
+}
+.itemsSection>div{
+    border-bottom: 1px solid lightgray;
+    margin: 0 30px 30px 30px;
+}
+.itemsSection>div>div{
+    display: flex;
+    padding: 20px 0;
+    /* margin: 20px 30px; */
+}
+.itemsSection>div>div>img{
+    object-fit: contain;
+    width: 200px;
+    margin-right: 30px;
+}
+.itemsSection>div>div>div{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:5px
+}
+.itemsSection>div>div>div>p:nth-child(2){
+    font-size: small;
+    font-weight: 500;
+    color: #007600;
+}
+.itemsSection>div>div>div>p:nth-child(3) {
+    font-size: small;
+    font-weight: 500;
+    color:#595d5f;
+}
+
+.itemsSection>div>div>div>p:nth-child(4) {
+    font-size: small;
+    font-weight: 500;
+    color:#303030;
+}
+
+.itemsSection>div>div>div>h3{
+    font-weight: normal;
+}
+
+.item>div:first-child{
+    margin-right: 50px;
+}
+
+
+
+
+.emptyCart{
+    flex:0.8;
+    display: flex;
+    flex-direction: row;
+    padding:20px;
+    background-color: white;
+    /* margin-right: 18px; */
+}
+.emptyCart>img{
+    width: 33%;
+    max-width: 500px;
+    object-fit: contain;
+    margin: 20px 50px 20px 20px;
+}
+.emptyCart>div{
+    margin: 30px 50px 30px 0;
+    object-fit: contain;
+    margin-right: 50px;
+}
+.emptyCart>div>p{
+    color: #027286;
+    font-size: smaller;
+    font-weight: 500;
+}
+.emptyCart>div>div{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+}
+.emptyCart>div>div>a>button{
+    font-size: 17px;
+    font-weight: normal;
+}
+.emptyCart>div>div>a:first-child>button{
+    /* width:210px; */
+    border: #ffd814 1px solid;
+    background-color: #ffd814;
+    border: none;
+    color: #111;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: #a6a6a6 0px 2px 8px -4px;
+}
+.emptyCart>div>div>a:nth-child(2)>button{
+    /* width:210px; */
+    padding: 9px 20px;
+    background-color: #ffffff;
+    border: #dedede 1px solid;
+    color: #111;
+    border-radius: 8px;
+    box-shadow: #a6a6a6 0px 2px 8px -5px;
+}
+
+
+
+.subTotalSection{
+    flex:0.2;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    background-color: white;
+    /* margin-right: 18px; */
+}
+.subTotalSection>h3{
+    font-size: large;
+    font-weight:500;
+    margin-bottom:20px;
+}
+.subTotalSection>button:first-of-type{
+    font-size: 15px;
+    margin: 0 0 20px 0;
+    background-color: #ffd814;
+    border: none;
+    color: #111;
+    /* width: fit-content; */
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: #a6a6a6 0px 2px 8px -4px;
+}
+.subTotalSection>button:nth-of-type(2){
+    font-size: 15px;
+    margin: 0 0 20px 0;
+    background-color: #ffffff;
+    border: #dedede 1px solid;
+    /* border: none; */
+    color: #111;
+    /* width: fit-content; */
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: #a6a6a6 0px 2px 8px -5px;
+}
+.subTotalSection>button:hover{
+    cursor: pointer;
+    filter: brightness(0.95);
+}
+.subTotalSection>div{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.progressBar{
+    overflow: hidden;
+    width: 82%;
+    height: 12px;
+    background-color: #c5eec5;
+    border: #077e63 2px solid;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.progress{
+    /* width: 50%; */
+    height: 100%;
+    background-color: #009674;
+    border-radius: 10px;
+}
+.subTotalSection>p{
+    color:#077e63;
+    font-size: smaller;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
