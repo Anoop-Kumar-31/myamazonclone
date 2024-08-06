@@ -3,10 +3,9 @@ import { Basket} from '../page';
 import { useContext } from 'react';
 import { checkoutContext } from '../page';
 export default function BasketDiv(){
-    // const {BasketData, setBasketData} = useContext(Basket);
+    const {BasketData, setBasketData} = useContext(Basket);
     const {isCheckOut, setIsCheckOut} = useContext(checkoutContext);
-    // const len=BasketData.length;
-    const len=0;
+    const len=BasketData.length;
     const changeElement = () =>{
         setIsCheckOut(true);
     }
