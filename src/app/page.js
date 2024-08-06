@@ -22,9 +22,9 @@ export default function Home() {
   return (
     <checkoutContext.Provider value={{isCheckOut,setIsCheckOut}}>
       <Basket.Provider value={{BasketData,setBasketData}}>
-        {/* <main className={styles.main}> */}
+        <main className={styles.main}>
           <Header/>
-        {/* </main> */}
+        </main>
       </Basket.Provider>
     </checkoutContext.Provider>
   );
