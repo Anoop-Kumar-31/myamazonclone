@@ -21,11 +21,11 @@ export default function Home() {
   },[]);
   return (
     <checkoutContext.Provider value={{isCheckOut,setIsCheckOut}}>
-      <Basket.Provider value={{BasketData,setBasketData}}>
+      {/* <Basket.Provider value={{BasketData,setBasketData}}> */}
         <main className={styles.main}>
           <Header/>
         </main>
-      </Basket.Provider>
+      {/* </Basket.Provider> */}
     </checkoutContext.Provider>
   );
 }
