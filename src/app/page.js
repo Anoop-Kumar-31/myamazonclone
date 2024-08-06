@@ -2,11 +2,11 @@
 import styles from "./page.module.css";
 import Header from "./Header/page";
 // import FrontPage from "./Header/FrontPage/page";
-import { createContext, useEffect } from "react";
-import { useState } from "react";
+import { useState, createContext, useEffect } from "react";
+// import {} from "react";
 
-export const checkoutContext = createContext();
-export const Basket = createContext();
+const mycheckoutContext = createContext();
+const myBasket = createContext();
 
 export default function Home() {
   const [isCheckOut, setIsCheckOut] = useState(false);
@@ -20,12 +20,15 @@ export default function Home() {
     }
   },[]);
   return (
-    <checkoutContext.Provider value={{isCheckOut,setIsCheckOut}}>
-      <Basket.Provider value={{BasketData,setBasketData}}>
+    <mycheckoutContext.Provider value={{isCheckOut,setIsCheckOut}}>
+      <myBasket.Provider value={{BasketData,setBasketData}}>
         <main className={styles.main}>
           <Header/>
         </main>
-      </Basket.Provider>
-    </checkoutContext.Provider>
+      </myBasket.Provider>
+    </mycheckoutContext.Provider>
   );
 }
+
+export const checkoutContext= ()=>useContext(mycheckoutContext);
+export const Basket= ()=>useContext(myBasket);
