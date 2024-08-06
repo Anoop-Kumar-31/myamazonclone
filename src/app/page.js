@@ -12,11 +12,13 @@ export default function Home() {
   const [isCheckOut, setIsCheckOut] = useState(false);
   const [BasketData, setBasketData] = useState([]);
   useEffect(() => {
-    const data = localStorage.getItem("BasketData");
-    if (data) {
-      setBasketData(JSON.parse(data));
+    if (typeof window !== 'undefined') {
+      const data = localStorage.getItem("BasketData");
+      if (data) {
+        setBasketData(JSON.parse(data));
+      }
     }
-  },[localStorage]);
+  },[]);
   return (
     <checkoutContext.Provider value={{isCheckOut,setIsCheckOut}}>
       <Basket.Provider value={{BasketData,setBasketData}}>

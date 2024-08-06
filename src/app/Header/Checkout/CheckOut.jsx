@@ -1,14 +1,24 @@
+'use client';
 import css from './CheckOut.module.css';
+import { useRouter } from 'next/navigation'
 import { useContext } from 'react';
 import {Basket} from '../../page';
 import {auth} from '../../Login/firebasesection';
 export default function CheckOut(){
+    const router = useRouter();
     const user = auth.currentUser;
     const {BasketData,setBasketData} = useContext(Basket);
     // console.log(BasketData);
     const clearBasket = ()=>{
         setBasketData([]);
         localStorage.clear();
+    }
+    const handleBuy = ()=>{
+        if(user){
+            router.push('/Payment');
+        }else{
+            router.push('/Login');
+        }
     }
     const total=BasketData.reduce((acc,curr)=>acc+Number(curr.cost),0);
     const percentage = Math.round((total /499)*100>100?100:(total /499)*100);
@@ -45,6 +55,19 @@ export default function CheckOut(){
                         <div>
                             <h1>Your Amazon Cart is empty</h1>
                             <p>Your shopping cart is waiting. Give it purpose to fill it with groceries, clothing, household supplies, electronics and more.</p>
+                            {/* {user?
+                            [
+                                <h1>Your Amazon Cart is empty</h1>,
+                                <p>Your shopping cart is waiting. Give it purpose to fill it with groceries, clothing, household supplies, electronics and more.</p>
+                            ]:
+                            [
+                                <h1>Please Login to view Cart items.</h1>,
+                                <p>Your shopping cart is waiting. Login and order the item you choosed.</p>,
+                                <div>
+                                    <a href='/Login'><button > Sign in to your account</button></a>
+                                    <a href="/Login"><button href='/Login'> Sign up now</button></a>
+                                </div>
+                            ]} */}
                             {user?"":<div>
                                 <a href='/Login'><button > Sign in to your account</button></a>
                                 <a href="/Login"><button href='/Login'> Sign up now</button></a>
@@ -65,7 +88,7 @@ export default function CheckOut(){
                 {percentage==100?<p>Eligible for Free Delivery.</p>:<p>₹{499-total} more needed for free Delivery.</p>}
 
                 <h3>Subtotal &#40;{BasketData.length}&#41;: <b>{"₹"+total}</b></h3>
-                <button>Proceed to Buy</button>
+                <button onClick={handleBuy}>Proceed to Buy</button>
                 <button onClick={clearBasket}>Clear Basket</button>
             </aside>
         </div>

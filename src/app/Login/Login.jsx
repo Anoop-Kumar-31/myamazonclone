@@ -7,32 +7,30 @@ import {
     getAuth,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
-} from "firebase/auth"; // Import Auth functions
-
-// import { useHistory } from "react-router-dom";
+} from "firebase/auth";
 export default function Login() {
     const [details, setDetails] = useState({ email: "", password: "" });
-    const router = useRouter(); // Access router outside functions
+    const router = useRouter();
     
     const signin = async (e) => {
-        e.preventDefault(); // Prevent default form submission behavior
+        e.preventDefault();
         signInWithEmailAndPassword(auth, details.email, details.password).then((userCredential) => {
             if (userCredential) {
                 router.push('/');
             }
         }).catch(error=>{
-            alert(error.message); // Handle login error
-        }); // Handle successful login
+            alert(error.message);
+        });
     };
   
     const register = async (e) => {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, details.email, details.password).then((userCredential) => {
             if(userCredential) {
-                router.push('/'); // Assuming you want to redirect to home after registration
+                router.push('/');
             }
         }).catch(error => {
-            alert(error.message); // Handle registration error
+            alert(error.message);
         });
 
     };
@@ -72,25 +70,9 @@ export default function Login() {
                             onClick={signin}
                         ></input>
                     </form>
-                    <p>
-                        By continuing, you agree to Amazon's{" "}
-                        <a href="/">Conditions of Use</a> and <a href="/">Privacy Notice</a>
-                        .
-                    </p>
-                    <p
-                        style={{
-                            position: "absolute",
-                            transform: "translate(110px,-30px)",
-                            backgroundColor: "white",
-                            padding: "0 8px",
-                            color: "rgb(112, 112, 112)",
-                        }}
-                    >
-                        New to Amazon?
-                    </p>
-
+                    <p>By continuing, you agree to Amazon's <a href="/">Conditions of Use</a> and <a href="/">Privacy Notice</a>.</p>
+                    <p style={{ position: "absolute", transform: "translate(110px,-30px)", backgroundColor: "white", padding: "0 8px", color: "rgb(112, 112, 112)",}}>New to Amazon?</p>
                     <hr />
-
                     <button className={css.create} onClick={register}>
                         Create your Amazon account
                     </button>

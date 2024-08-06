@@ -3,15 +3,13 @@ import css from "./Header.module.css";
 import NavBar from "./NavBar/NavBar";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import SearchBar from "./SearchBar";
-import { useEffect, useState } from "react";
 import { auth } from "../Login/firebasesection";
 import BasketDiv from './BasketDiv';
 import { checkoutContext } from "../page";
-import { useContext } from "react";
-// import {auth} from "../Login/firebasesection";
+import React,{ useContext, useEffect } from "react";
 
 export default function Header() {
-    const { setIsCheckOut } = useContext(checkoutContext);
+    const {isCheckOut, setIsCheckOut } = useContext(checkoutContext);
     const user = auth.currentUser;
     
     const logout = () => {
@@ -24,16 +22,7 @@ export default function Header() {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(authUser => {
             console.log("user is >> ", !authUser);
-            try {
-                if (!authUser["emailVerified"]) {
-                    authUser.sendEmailVerification();
-                    alert("Please verify your email");
-                }
-            } catch (e) {
-                console.error(e);
-            }
         });
-
         return () => unsubscribe();
     }, [auth]);
 
