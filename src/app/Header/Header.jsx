@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 import css from "./Header.module.css";
 import NavBar from "./NavBar/NavBar";
 import { HiOutlineLocationMarker } from "react-icons/hi";
