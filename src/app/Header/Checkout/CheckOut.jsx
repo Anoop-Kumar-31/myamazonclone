@@ -2,12 +2,12 @@
 import css from './CheckOut.module.css';
 import { useRouter } from 'next/navigation'
 import { useContext } from 'react';
-import {Basket} from '../../page';
+import {Basket} from '../../context';
 import {auth} from '../../Login/firebasesection';
 export default function CheckOut(){
     const router = useRouter();
     const user = auth.currentUser;
-    const {BasketData,setBasketData} = useContext(Basket);
+    const {BasketData,setBasketData} = Basket();
     // console.log(BasketData);
     const clearBasket = ()=>{
         setBasketData([]);

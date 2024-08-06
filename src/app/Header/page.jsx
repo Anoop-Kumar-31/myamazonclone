@@ -1,11 +1,10 @@
 import FrontPage from './FrontPage/FrontPage';
-import NavBar from './NavBar/NavBar';
 import Header from './Header';
 import {Suspense, useContext} from 'react';
-import { checkoutContext } from '../page';
+import { checkoutContext } from '../context';
 import CheckOut from './Checkout/CheckOut';
 export default function Page() {
-    const {isCheckOut} = useContext(checkoutContext);
+    const {isCheckOut} = checkoutContext();
     return (
         <main >
         <Suspense fallback={<div>Loading...</div>}>

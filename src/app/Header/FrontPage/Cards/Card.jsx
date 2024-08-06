@@ -1,9 +1,9 @@
 
 import css from './Cards.module.css'
 import { useContext } from 'react';
-import { Basket } from '../../../page';
+import { Basket } from '../../../context';
 export default function Card({image,name,cost}) {
-    const {BasketData, setBasketData} = useContext(Basket);
+    const {BasketData, setBasketData} = Basket();
     const addtocart = () =>{
         setBasketData([...BasketData,{image,name,cost}]);
         window.localStorage.setItem('BasketData',JSON.stringify([...BasketData,{image,name,cost}]));
