@@ -1,3 +1,4 @@
+'use client';
 import { useState, createContext, useEffect, useContext } from "react";
 
 const mycheckoutContext = createContext();
