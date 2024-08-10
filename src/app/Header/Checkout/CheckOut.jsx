@@ -1,27 +1,28 @@
 'use client';
 import css from './CheckOut.module.css';
 import { useRouter } from 'next/navigation'
-import { useContext } from 'react';
 import {Basket} from '../../context';
 import {auth} from '../../Login/firebasesection';
 export default function CheckOut(){
     const router = useRouter();
     const user = auth.currentUser;
-    const {BasketData,setBasketData} = Basket();
+    // const {BasketData,setBasketData} = Basket();
     // console.log(BasketData);
-    const clearBasket = ()=>{
-        setBasketData([]);
-        localStorage.clear();
-    }
-    const handleBuy = ()=>{
-        if(user){
-            router.push('/Payment');
-        }else{
-            router.push('/Login');
-        }
-    }
-    const total=BasketData.reduce((acc,curr)=>acc+Number(curr.cost),0);
-    const percentage = Math.round((total /499)*100>100?100:(total /499)*100);
+    // const clearBasket = ()=>{
+    //     setBasketData([]);
+    //     localStorage.clear();
+    // }
+    // const handleBuy = ()=>{
+    //     if(user){
+    //         router.push('/Payment');
+    //     }else{
+    //         router.push('/Login');
+    //     }
+    // }
+    // const total=BasketData.reduce((acc,curr)=>acc+Number(curr.cost),0);
+    // const percentage = Math.round((total /499)*100>100?100:(total /499)*100);
+    const BasketData = []; //sample value
+    const percentage = 50; //sample value
     return(
         <div className={css.checkOut}>
             {BasketData.length > 0 ? (

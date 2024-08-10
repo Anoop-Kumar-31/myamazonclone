@@ -1,8 +1,8 @@
 'use client';
 import { useState, createContext, useEffect, useContext } from "react";
 
-const mycheckoutContext = createContext();
-const myBasket = createContext();
+const mycheckoutContext = createContext(undefined);
+const myBasket = createContext(undefined);
 
 export const MyContextProvider = ({children})=>{
     const [isCheckOut, setIsCheckOut] = useState(false);

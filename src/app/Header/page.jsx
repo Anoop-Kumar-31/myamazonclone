@@ -4,15 +4,15 @@ import {Suspense, useContext} from 'react';
 import { checkoutContext } from '../context';
 import CheckOut from './Checkout/CheckOut';
 export default function Page() {
-    // const {isCheckOut} = checkoutContext();
+    const {isCheckOut} = checkoutContext();
     return (
         <main >
         <Suspense fallback={<div>Loading...</div>}>
             <Header/>
         </Suspense>
         <Suspense fallback={<div>Loading...</div>}>
-            {/* { isCheckOut ? <CheckOut/>:<FrontPage/>} */}
-            <FrontPage/> {/*sample*/}
+            { isCheckOut ? <CheckOut/>:<FrontPage/>}
+            {/* <FrontPage/> */}
         </Suspense>
         </main>
     );
