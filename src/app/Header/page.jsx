@@ -1,10 +1,10 @@
 import FrontPage from './FrontPage/FrontPage';
 import Header from './Header';
-import {Suspense, useContext} from 'react';
-import { checkoutContext } from '../context';
+import {Suspense} from 'react';
+import { usecheckoutContext } from '../context';
 import CheckOut from './Checkout/CheckOut';
 export default function Page() {
-    const {isCheckOut} = checkoutContext();
+    const {isCheckOut} = usecheckoutContext();
     return (
         <main >
         <Suspense fallback={<div>Loading...</div>}>
