@@ -11,7 +11,8 @@ export default function BasketDiv(){
     //     setIsCheckOut(true);
     // }
     return(
-        <a onClick={changeElement}>
+        // <a onClick={changeElement}>
+        <a>
             {/* <div className={css.inner} onClick={(e)=>{e.preventDefault()}}> */}
             <div className={css.inner}>
                 <p>{len}</p>
