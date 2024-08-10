@@ -24,9 +24,6 @@ export const MyContextProvider = ({children})=>{
         </mycheckoutContext.Provider>
     );
 }
-const checkoutContext= ()=>useContext(mycheckoutContext);
-const Basket= ()=>useContext(myBasket);
+export const checkoutContext= ()=>useContext(mycheckoutContext);
+export const Basket= ()=>useContext(myBasket);
 
-//export checkoutContext, Basket, MyContextProvider
-// export default MyContextProvider;
-export {checkoutContext, Basket};

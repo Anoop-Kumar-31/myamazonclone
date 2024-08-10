@@ -3,8 +3,8 @@ import Header from './Header';
 import {Suspense, useContext} from 'react';
 import { checkoutContext } from '../context';
 import CheckOut from './Checkout/CheckOut';
+const {isCheckOut} = checkoutContext();
 export default function Page() {
-    const {isCheckOut} = checkoutContext();
     return (
         <main >
         <Suspense fallback={<div>Loading...</div>}>
