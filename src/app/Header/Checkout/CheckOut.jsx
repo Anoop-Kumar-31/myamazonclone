@@ -1,7 +1,7 @@
 'use client';
 import css from './CheckOut.module.css';
 import { useRouter } from 'next/navigation'
-import {Basket} from '@/app/page';
+import {Basket} from '../../page';
 import {auth} from '../../Login/firebasesection';
 const {BasketData,setBasketData} = Basket();
 export default function CheckOut(){
