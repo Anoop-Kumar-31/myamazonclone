@@ -1,6 +1,6 @@
 import Card from "./Card";
 import css from './Cards.module.css'
-import { MyContextProvider } from '../../../content';
+// import MyContextProvider from '../../../context';
 export default function Cards() {
     // const{BasketData, setBasketData} = Basket();
     const list =
@@ -23,12 +23,10 @@ export default function Cards() {
         cost:'21999'
     }]
     return(
-        <MyContextProvider>
             <main className= {css.cardscollection}>
             {list.map((item,index)=>(
                 <Card key={index} image={item.image} name={item.name} cost={item.cost}/>
             ))}
             </main>
-        </MyContextProvider>
     )
 }
