@@ -3,10 +3,10 @@ import css from './CheckOut.module.css';
 import { useRouter } from 'next/navigation'
 import {Basket} from '@/app/page';
 import {auth} from '../../Login/firebasesection';
+const {BasketData,setBasketData} = Basket();
 export default function CheckOut(){
     const router = useRouter();
     const user = auth.currentUser;
-    const {BasketData,setBasketData} = Basket();
     console.log(BasketData);
     const clearBasket = ()=>{
         setBasketData([]);
