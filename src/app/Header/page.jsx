@@ -2,7 +2,7 @@
 import FrontPage from './FrontPage/FrontPage';
 import Header from './Header';
 import {Suspense, useContext} from 'react';
-import {checkoutContext} from '../context';
+import {checkoutContext, mycheckoutContext} from '../context';
 import CheckOut from './Checkout/CheckOut';
 export default function Page() {
     // const {isCheckOut} = checkoutContext();
