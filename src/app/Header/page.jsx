@@ -5,7 +5,8 @@ import {Suspense, useContext} from 'react';
 import {checkoutContext} from '../context';
 import CheckOut from './Checkout/CheckOut';
 export default function Page() {
-    const {isCheckOut} = checkoutContext();
+    // const {isCheckOut} = checkoutContext();
+    const {isCheckOut} = useContext(mycheckoutContext);
     return (
         <main >
         <Suspense fallback={<div>Loading...</div>}>
