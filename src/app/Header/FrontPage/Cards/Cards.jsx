@@ -1,6 +1,8 @@
 import Card from "./Card";
 import css from './Cards.module.css'
+import { MyContextProvider } from '../../../content';
 export default function Cards() {
+    // const{BasketData, setBasketData} = Basket();
     const list =
     [{
         image:'https://m.media-amazon.com/images/I/716YUdHaK0L._AC_UL480_FMwebp_QL65_.jpg',
@@ -21,10 +23,12 @@ export default function Cards() {
         cost:'21999'
     }]
     return(
-        <main className= {css.cardscollection}>
-        {list.map((item,index)=>(
-            <Card key={index} image={item.image} name={item.name} cost={item.cost}/>
-        ))}
-        </main>
+        <MyContextProvider>
+            <main className= {css.cardscollection}>
+            {list.map((item,index)=>(
+                <Card key={index} image={item.image} name={item.name} cost={item.cost}/>
+            ))}
+            </main>
+        </MyContextProvider>
     )
 }

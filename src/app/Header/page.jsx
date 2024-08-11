@@ -6,7 +6,6 @@ import {checkoutContext} from '../page';
 import CheckOut from './Checkout/CheckOut';
 export default function Page() {
     const {isCheckOut} = checkoutContext();
-    // const {isCheckOut} = useContext(mycheckoutContext);
     return (
         <main >
         <Suspense fallback={<div>Loading...</div>}>
@@ -14,7 +13,6 @@ export default function Page() {
         </Suspense>
         <Suspense fallback={<div>Loading...</div>}>
             { isCheckOut ? <CheckOut/>:<FrontPage/>}
-            {/* <FrontPage/> */}
         </Suspense>
         </main>
     );
