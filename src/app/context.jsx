@@ -1,5 +1,5 @@
 'use client';
-import { useState, createContext, useEffect, useContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 export const mycheckoutContext = createContext({});
 export const myBasket = createContext({});

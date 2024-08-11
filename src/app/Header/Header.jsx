@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 import { auth } from "../Login/firebasesection";
 import BasketDiv from './BasketDiv';
 import { checkoutContext } from "../page";
-import React,{ useContext, useEffect } from "react";
+import React,{useEffect } from "react";
 
 export default function Header() {
     const {isCheckOut, setIsCheckOut } = checkoutContext();
