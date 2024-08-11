@@ -5,12 +5,12 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import SearchBar from "./SearchBar";
 import { auth } from "../Login/firebasesection";
 import BasketDiv from './BasketDiv';
-import { mycheckoutContext } from "../page";
+import { checkoutContext } from "../page";
 import React,{ useContext, useEffect } from "react";
 
 export default function Header() {
-    // const {isCheckOut, setIsCheckOut } = checkoutContext();
-    const {isCheckOut, setIsCheckOut } = useContext(mycheckoutContext);
+    const {isCheckOut, setIsCheckOut } = checkoutContext();
+    // const {isCheckOut, setIsCheckOut } = useContext(mycheckoutContext);
     const user = auth.currentUser;
     
     const logout = () => {
