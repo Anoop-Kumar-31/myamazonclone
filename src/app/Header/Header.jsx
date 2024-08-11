@@ -5,11 +5,12 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import SearchBar from "./SearchBar";
 import { auth } from "../Login/firebasesection";
 import BasketDiv from './BasketDiv';
-import { checkoutContext } from "../context";
+import { mycheckoutContext } from "../page";
 import React,{ useContext, useEffect } from "react";
 
 export default function Header() {
     // const {isCheckOut, setIsCheckOut } = checkoutContext();
+    const {isCheckOut, setIsCheckOut } = useContext(mycheckoutContext);
     const user = auth.currentUser;
     
     const logout = () => {
@@ -29,8 +30,8 @@ export default function Header() {
     return(
         <main className={css.main}>
         <header className={css.header}>
-            {/* <div className={css.header_logo} onClick={()=>{setIsCheckOut(false)}}> */}
-            <div className={css.header_logo}>
+            <div className={css.header_logo} onClick={()=>{setIsCheckOut(false)}}>
+            {/* <div className={css.header_logo}> */}
                 <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Amazon Logo" />
             </div>
             <div className={css.outer}>
