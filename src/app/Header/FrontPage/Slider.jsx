@@ -72,4 +72,4 @@ export default function Slider() {
       <button className={css.next} onClick={handleNext}>&gt;</button>
     </main>
   );
-}Z
+}

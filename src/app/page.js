@@ -5,7 +5,7 @@ import Header from "./Header/page";
 // import { useState, createContext, useEffect } from "react";
 
 // import {useContext} from "react";
-// import { mycheckoutContext,myBasket } from "./context";
+import { mycheckoutContext,myBasket } from "./context";
 import MyContextProvider from "./context";
 // const mycheckoutContext = createContext();
 // const myBasket = createContext();
@@ -22,11 +22,14 @@ export default function Home() {
   //   }
   // },[]);
   return (
-    <main className={styles.main}>
-      <MyContextProvider>
+    <MyContextProvider>
+      <main className={styles.main}>
         <Header/>
-      </MyContextProvider>
-    </main>
+      </main>
+    </MyContextProvider>
       
   );
 }
+
+export const checkoutContext= ()=> useContext(mycheckoutContext);
+export const Basket= ()=>useContext(myBasket);

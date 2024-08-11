@@ -1,8 +1,8 @@
-// 'use client';
+'use client';
 import FrontPage from './FrontPage/FrontPage';
 import Header from './Header';
-import {Suspense} from 'react';
-import {checkoutContext} from '../context';
+import {Suspense, useContext} from 'react';
+import {checkoutContext, mycheckoutContext} from '../page';
 import CheckOut from './Checkout/CheckOut';
 export default function Page() {
     const {isCheckOut} = checkoutContext();
@@ -14,6 +14,7 @@ export default function Page() {
         </Suspense>
         <Suspense fallback={<div>Loading...</div>}>
             { isCheckOut ? <CheckOut/>:<FrontPage/>}
+            {/* <FrontPage/> */}
         </Suspense>
         </main>
     );
