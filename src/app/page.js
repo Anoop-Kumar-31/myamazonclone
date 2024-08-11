@@ -20,11 +20,11 @@ export default function Home() {
   //   }
   // },[]);
   return (
-      <MyContextProvider>
+      
           <main className={styles.main}>
-            <Header/>
+            <MyContextProvider><Header/></MyContextProvider>
           </main>
-      </MyContextProvider>
+      
   );
 }
 
