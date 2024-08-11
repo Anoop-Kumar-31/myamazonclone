@@ -1,7 +1,7 @@
 'use client';
 import css from './CheckOut.module.css';
 import { useRouter } from 'next/navigation'
-import {Basket} from '../../page';
+import {Basket} from '@/app/page';
 import {auth} from '../../Login/firebasesection';
 export default function CheckOut(){
     const router = useRouter();
