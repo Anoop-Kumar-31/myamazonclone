@@ -4,7 +4,7 @@ import Header from "./Header/page";
 // import FrontPage from "./Header/FrontPage/page";
 // import { useState, createContext, useEffect } from "react";
 
-// import {useContext} from "react";
+import {useContext} from "react";
 import { mycheckoutContext,myBasket } from "./context";
 import MyContextProvider from "./context";
 // const mycheckoutContext = createContext();
