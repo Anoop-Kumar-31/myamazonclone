@@ -16,11 +16,11 @@ export default function MyContextProvider({children}){
     },[]);
     
     return (
-        <mycheckoutContext.Provider value={{isCheckOut,setIsCheckOut}}>
         <myBasket.Provider value={{BasketData,setBasketData}}>
+        <mycheckoutContext.Provider value={{isCheckOut,setIsCheckOut}}>
             {children}
-        </myBasket.Provider>
         </mycheckoutContext.Provider>
+        </myBasket.Provider>
     );
 }
 
