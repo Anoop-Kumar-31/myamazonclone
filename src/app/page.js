@@ -20,11 +20,13 @@ export default function Home() {
   //   }
   // },[]);
   return (
-    <MyContextProvider>
-        <main className={styles.main}>
-          <Header/>
-        </main>
-    </MyContextProvider>
+    <React.StrictMode>
+      <MyContextProvider>
+          <main className={styles.main}>
+            <Header/>
+          </main>
+      </MyContextProvider>
+    </React.StrictMode>
   );
 }
 
