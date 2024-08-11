@@ -25,5 +25,5 @@ export default function MyContextProvider({children}){
 }
 
 
-export const checkoutContext= ()=> useContext(mycheckoutContext);
-export const Basket= ()=>useContext(myBasket);
+// export const checkoutContext= ()=> useContext(mycheckoutContext);
+// export const Basket= ()=>useContext(myBasket);
