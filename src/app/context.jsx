@@ -4,7 +4,7 @@ import { useState, createContext, useEffect, useContext } from "react";
 const mycheckoutContext = createContext(null);
 const myBasket = createContext(null);
 
-const MyContextProvider = ({children})=>{
+export const MyContextProvider = ({children})=>{
     const [isCheckOut, setIsCheckOut] = useState(false);
     const [BasketData, setBasketData] = useState([]);
     useEffect(() => {
@@ -24,6 +24,5 @@ const MyContextProvider = ({children})=>{
         </mycheckoutContext.Provider>
     );
 }
-const checkoutContext= ()=> useContext(mycheckoutContext);
-const Basket= ()=>useContext(myBasket);
-export default {MyContextProvider, checkoutContext, Basket};
+export const checkoutContext= ()=> useContext(mycheckoutContext);
+export const Basket= ()=>useContext(myBasket);
