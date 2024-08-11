@@ -4,7 +4,7 @@ import Header from "./Header/page";
 // import FrontPage from "./Header/FrontPage/page";
 // import { useState, createContext, useEffect } from "react";
 // import {} from "react";
-import { MyContextProvider } from "./context";
+import MyContextProvider from "./context";
 // const mycheckoutContext = createContext();
 // const myBasket = createContext();
 
@@ -20,13 +20,11 @@ export default function Home() {
   //   }
   // },[]);
   return (
-    <React.StrictMode>
       <MyContextProvider>
           <main className={styles.main}>
             <Header/>
           </main>
       </MyContextProvider>
-    </React.StrictMode>
   );
 }
 
