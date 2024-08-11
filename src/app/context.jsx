@@ -23,5 +23,3 @@ export default function MyContextProvider({children}){
         </mycheckoutContext.Provider>
     );
 }
-export const checkoutContext= ()=> useContext(mycheckoutContext);
-export const Basket= ()=>useContext(myBasket);
