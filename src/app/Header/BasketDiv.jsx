@@ -4,7 +4,10 @@ import { Basket, checkoutContext } from '../page';
 export default function BasketDiv(){
     const {BasketData, setBasketData} = Basket();
     const {isCheckOut, setIsCheckOut} = checkoutContext();
-    const len=BasketData.length;
+    try{const len=BasketData.length;}
+    catch(e){
+        const len=0;
+    }
     // const len=0; //sample value
     const changeElement = () =>{
         setIsCheckOut(true);
