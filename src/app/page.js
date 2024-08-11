@@ -11,14 +11,11 @@ import MyContextProvider from "./context";
 
 export default function Home() {
   return (
-    <React.StrictMode>
       <MyContextProvider>
         <main className={styles.main}>
           <Header/>
         </main>
       </MyContextProvider>
-    </React.StrictMode>  
-      
   );
 }
 
