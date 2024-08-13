@@ -7,7 +7,7 @@ import { Basket } from '../page';
 import CheckOut from './Checkout/CheckOut';
 export default function Page() {
     const {isCheckOut} = checkoutContext();
-    const {basketData, setBasketData} = Basket!==undefined?Basket():{basketData:["amit"], setBasketData:()=>{}};
+    const {basketData, setBasketData} = Basket==undefined?{basketData:["amit"], setBasketData:()=>{}}:Basket();
     const len=basketData.length;
     console.log(len);
     return (
