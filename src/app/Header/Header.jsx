@@ -9,7 +9,7 @@ import { checkoutContext } from "../page";
 import React,{ useEffect } from "react";
 
 export default function Header() {
-    // const {isCheckOut, setIsCheckOut }= BasketDiv!=undefined? checkoutContext():{isCheckOut:false, setIsCheckOut:()=>{}};
+    const {isCheckOut, setIsCheckOut }= BasketDiv!=undefined? checkoutContext():{isCheckOut:false, setIsCheckOut:()=>{}};
     const user = auth.currentUser;
     
     const logout = () => {
@@ -29,8 +29,8 @@ export default function Header() {
     return(
         <main className={css.main}>
         <header className={css.header}>
-            {/* <div className={css.header_logo} onClick={()=>{setIsCheckOut(false)}}> */}
-            <div className={css.header_logo}>
+            <div className={css.header_logo} onClick={()=>{setIsCheckOut(false)}}>
+            {/* <div className={css.header_logo}> */}
                 <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Amazon Logo" />
             </div>
             <div className={css.outer}>
