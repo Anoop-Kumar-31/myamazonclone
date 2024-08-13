@@ -1,7 +1,7 @@
 // import MyContextProvider from "@/app/context";
 import Card from "./Card";
 import css from './Cards.module.css'
-// import { Basket } from '../../../page';
+import { Basket } from '../../../page';
 export default function Cards() {
     const {BasketData, setBasketData} = Basket!=undefined?Basket():{BasketData:[], setBasketData:()=>{}};
     const addtocart = () =>{
