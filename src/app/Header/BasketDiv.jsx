@@ -1,7 +1,7 @@
 import css from './Header.module.css'
 // import { Basket} from '../page';
 import { useContext } from 'react';
-import { Basket, checkoutContext } from '../context';
+import { Basket, checkoutContext } from '../page';
 export default function BasketDiv(){
     // const {BasketData, setBasketData} = Basket();
     const {BasketData, setBasketData}= Basket!=undefined? Basket():{BasketData:[], setBasketData:()=>{}};
