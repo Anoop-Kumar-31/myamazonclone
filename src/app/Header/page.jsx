@@ -3,9 +3,13 @@ import FrontPage from './FrontPage/FrontPage';
 import Header from './Header';
 import {Suspense, useContext} from 'react';
 import {checkoutContext} from '../page';
+import { Basket } from './Header/BasketDiv';
 import CheckOut from './Checkout/CheckOut';
 export default function Page() {
     const {isCheckOut} = checkoutContext();
+    const {basketData, setBasketData} = Basket();
+    const len=basketData.length;
+    console.log(len);
     return (
         <main >
         <Suspense fallback={<div>Loading...</div>}>

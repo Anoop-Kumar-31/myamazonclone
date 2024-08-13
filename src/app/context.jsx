@@ -5,7 +5,7 @@ export const mycheckoutContext = createContext({});
 export const myBasket = createContext({});
 export default function MyContextProvider({children}){
     const [isCheckOut, setIsCheckOut] = useState(false);
-    const [BasketData, setBasketData] = useState([]);
+    const [basketData, setBasketData] = useState([]);
     useEffect(() => {
         if (typeof window !== 'undefined') {
         const data = localStorage.getItem("BasketData");
@@ -16,11 +16,11 @@ export default function MyContextProvider({children}){
     },[]);
     
     return (
-        <myBasket.Provider value={{BasketData,setBasketData}}>
         <mycheckoutContext.Provider value={{isCheckOut,setIsCheckOut}}>
+        <myBasket.Provider value={{basketData,setBasketData}}>
             {children}
-        </mycheckoutContext.Provider>
         </myBasket.Provider>
+        </mycheckoutContext.Provider>
     );
 }
 

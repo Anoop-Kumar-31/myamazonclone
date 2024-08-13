@@ -1,13 +1,8 @@
 // import MyContextProvider from "@/app/context";
 import Card from "./Card";
 import css from './Cards.module.css'
-import { Basket } from '../../../page';
+// import { Basket } from '../../../page';
 export default function Cards() {
-    const {BasketData, setBasketData} = Basket!=undefined?Basket():{BasketData:[], setBasketData:()=>{}};
-    const addtocart = () =>{
-        setBasketData([...BasketData,{image,name,cost}]);
-        window.localStorage.setItem('BasketData',JSON.stringify([...BasketData,{image,name,cost}]));
-    }
     const list =
     [{
         image:'https://m.media-amazon.com/images/I/716YUdHaK0L._AC_UL480_FMwebp_QL65_.jpg',
@@ -30,14 +25,7 @@ export default function Cards() {
     return(
             <main className= {css.cardscollection}>
             {list.map((item,index)=>(
-                {/* <Card key={index} image={item.image} name={item.name} cost={item.cost}/> */},
-                <div className={css.card}>
-                    <img src={item.image} alt='productimage'></img>
-                    <h3>{item.name}</h3>
-                    <h4>{'₹'+item.cost}</h4>
-                    <button onClick={addtocart}>Add to Cart</button>
-                    {/* <button>Add to Cart</button> */}
-                </div>
+                <Card key={index} image={item.image} name={item.name} cost={item.cost}/>
             ))}
             </main>
     )
