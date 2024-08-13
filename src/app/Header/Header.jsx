@@ -9,7 +9,7 @@ import { checkoutContext } from "../page";
 import React,{ useEffect } from "react";
 
 export default function Header() {
-    const {isCheckOut, setIsCheckOut }= BasketDiv!=undefined? checkoutContext():{isCheckOut:false, setIsCheckOut:()=>{}};
+    const {isCheckOut, setIsCheckOut }= checkoutContext!=undefined? checkoutContext():{isCheckOut:false, setIsCheckOut:()=>{}};
     const user = auth.currentUser;
     
     const logout = () => {
