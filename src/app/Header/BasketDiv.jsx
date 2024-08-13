@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { Basket, checkoutContext } from '../context';
 export default function BasketDiv(){
     // const {BasketData, setBasketData} = Basket();
-    const {BasketData, setBasketData}= Basket!=undefined? Basket():{BasketData:false, setBasketData:()=>{}};
+    const {BasketData, setBasketData}= Basket!=undefined? Basket():{BasketData:[], setBasketData:()=>{}};
     const {isCheckOut, setIsCheckOut }= checkoutContext!=undefined? checkoutContext():{isCheckOut:false, setIsCheckOut:()=>{}};
     // const {isCheckOut, setIsCheckOut} = checkoutContext();
     const len=BasketData.length;
