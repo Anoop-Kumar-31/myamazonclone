@@ -5,7 +5,7 @@ import {Suspense} from 'react';
 import {checkoutContext} from '../page';
 import { Basket } from '../page';
 import CheckOut from './Checkout/CheckOut';
-export default async function Page() {
+export default function Page() {
     const {isCheckOut} = checkoutContext()!=undefined?checkoutContext():{isCheckOut:false};
     const {basketData} = Basket!==undefined?Basket():{basketData:[]};
     const len=basketData?basketData.length:0;
