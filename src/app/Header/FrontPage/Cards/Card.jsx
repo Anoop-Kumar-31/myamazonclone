@@ -2,10 +2,10 @@
 import css from './Cards.module.css'
 import { Basket } from '../../../page';
 export default function Card({image,name,cost}) {
-    const {BasketData, setBasketData} = Basket!=undefined?Basket():{BasketData:[], setBasketData:()=>{}};
+    const {basketData, setBasketData} = Basket!=undefined?Basket():{BasketData:[], setBasketData:()=>{}};
     const addtocart = () =>{
-        setBasketData([...BasketData,{image,name,cost}]);
-        window.localStorage.setItem('BasketData',JSON.stringify([...BasketData,{image,name,cost}]));
+        setBasketData([...basketData,{image,name,cost}]);
+        window.localStorage.setItem('BasketData',JSON.stringify([...basketData,{image,name,cost}]));
     }
     return(
         <div className={css.card}>

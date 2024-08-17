@@ -7,7 +7,7 @@ export default function CheckOut(){
     const {basketData,setBasketData} = Basket();
     const router = useRouter();
     const user = auth.currentUser;
-    console.log(BasketData);
+    console.log(basketData);
     const clearBasket = ()=>{
         setBasketData([]);
         localStorage.clear();
@@ -19,17 +19,17 @@ export default function CheckOut(){
             router.push('/Login');
         }
     }
-    const total=BasketData.reduce((acc,curr)=>acc+Number(curr.cost),0);
+    const total=basketData.reduce((acc,curr)=>acc+Number(curr.cost),0);
     const percentage = Math.round((total /499)*100>100?100:(total /499)*100);
     // const BasketData = []; //sample value
     // const percentage = 50; //sample value
     return(
         <div className={css.checkOut}>
-            {BasketData.length > 0 ? (
+            {basketData.length > 0 ? (
                 <section className={css.itemsSection}>
                     <h1>Checkout</h1>
                     <p>price</p>
-                    {BasketData.map((item)=>{
+                    {basketData.map((item)=>{
                         return(
                             <div className={css.item}>
                                 <div>
