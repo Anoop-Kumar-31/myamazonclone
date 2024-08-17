@@ -7,9 +7,9 @@ import { Basket } from '../page';
 import CheckOut from './Checkout/CheckOut';
 export default async function Page() {
     const {isCheckOut} = checkoutContext();
-    const {basketData, setBasketData} = Basket();
-    const len=basketData.length;
-    console.log(len);
+    // const {basketData, setBasketData} = await Basket==undefined?{basketData:["amit"], setBasketData:()=>{}}:Basket();
+    // const len=basketData?basketData.length:0;
+    // console.log(len);
     return (
         <main >
         <Suspense fallback={<div>Loading...</div>}>
