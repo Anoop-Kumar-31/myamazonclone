@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 import css from './Cards.module.css'
 import { Basket } from '../../../page';
 export default function Card({image,name,cost}) {
@@ -13,7 +13,6 @@ export default function Card({image,name,cost}) {
             <h3>{name}</h3>
             <h4>{'₹'+cost}</h4>
             <button onClick={addtocart}>Add to Cart</button>
-            {/* <button>Add to Cart</button> */}
         </div>
     )
 }

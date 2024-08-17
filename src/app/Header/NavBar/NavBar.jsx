@@ -1,6 +1,5 @@
-'use client';
+// 'use client';
 import { IoMenuSharp, IoClose } from "react-icons/io5";
-
 import css from "./NavBar.module.css";
 import { useState } from "react";
 export default function NavBar() {
@@ -25,7 +24,7 @@ export default function NavBar() {
                                                 <ul>
                                                     {obj[key].map((item,index)=>{
                                                         return(
-                                                            <li key={index}>{item}</li>
+                                                            item=="Sign In"?<Link href="/Login"><li key={index}>{item}</li></Link>:<li key={index}>{item}</li>
                                                         )
                                                     })}
                                                 </ul>
