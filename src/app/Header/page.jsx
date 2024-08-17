@@ -1,7 +1,7 @@
 'use client';
 import FrontPage from './FrontPage/FrontPage';
 import Header from './Header';
-import {Suspense, useContext} from 'react';
+import {Suspense} from 'react';
 import {checkoutContext} from '../page';
 import { Basket } from '../page';
 import CheckOut from './Checkout/CheckOut';
