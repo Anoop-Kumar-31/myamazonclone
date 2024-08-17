@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import {Basket} from '../../page';
 import {auth} from '../../Login/firebasesection';
 export default function CheckOut(){
-    const {basketData,setBasketData} = Basket();
+    const {basketData,setBasketData} = Basket!=undefined?Basket():{basketData:[],setBasketData:()=>{}};
     const router = useRouter();
     const user = auth.currentUser;
     console.log(basketData);

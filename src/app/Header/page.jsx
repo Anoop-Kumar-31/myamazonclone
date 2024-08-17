@@ -6,8 +6,8 @@ import {checkoutContext} from '../page';
 import { Basket } from '../page';
 import CheckOut from './Checkout/CheckOut';
 export default async function Page() {
-    const {isCheckOut} = checkoutContext();
-    const {basketData, setBasketData} = await Basket==undefined?{basketData:["amit"], setBasketData:()=>{}}:Basket();
+    const {isCheckOut} = checkoutContext()!=undefined?checkoutContext():{isCheckOut:false};
+    const {basketData} = Basket!==undefined?Basket():{basketData:[]};
     const len=basketData?basketData.length:0;
     console.log(len);
     return (
