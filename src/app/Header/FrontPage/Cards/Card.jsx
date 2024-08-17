@@ -1,4 +1,4 @@
-'use client';
+
 import css from './Cards.module.css'
 import { Basket } from '../../../page';
 export default function Card({image,name,cost}) {
