@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 import FrontPage from './FrontPage/FrontPage';
 import Header from './Header';
 import {checkoutContext} from '../page';

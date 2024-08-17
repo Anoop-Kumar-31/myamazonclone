@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import Blocks from './Blocks/Blocks';
 import Cards from './Cards/Cards';

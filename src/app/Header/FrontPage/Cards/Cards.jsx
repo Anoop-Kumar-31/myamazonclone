@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 import Card from "./Card";
 import css from './Cards.module.css'
 export default function Cards() {

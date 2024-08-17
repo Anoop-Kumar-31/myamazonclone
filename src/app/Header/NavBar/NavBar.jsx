@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 import { IoMenuSharp, IoClose } from "react-icons/io5";
 import css from "./NavBar.module.css";
 import { useState } from "react";
