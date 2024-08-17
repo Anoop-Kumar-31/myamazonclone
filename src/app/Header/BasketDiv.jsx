@@ -1,14 +1,13 @@
 import css from './Header.module.css'
-// import { Basket} from '../page';
-import { useContext } from 'react';
+import React from 'react';
 import { Basket, checkoutContext } from '../page';
 export default function BasketDiv(){
     // const {BasketData, setBasketData} = Basket();
-    const {basketData, setBasketData}= Basket!=undefined? Basket():{basketData:[], setBasketData:()=>{}};
-    const {isCheckOut, setIsCheckOut }= checkoutContext!=undefined? checkoutContext():{isCheckOut:false, setIsCheckOut:()=>{}};
     // const {isCheckOut, setIsCheckOut} = checkoutContext();
-    const len=basketData.length;
     // const len=0; //sample value
+    const {basketData}= Basket!=undefined? Basket():{basketData:[]};
+    const {setIsCheckOut }= checkoutContext!=undefined? checkoutContext():{setIsCheckOut:()=>{}};
+    const len=basketData.length;
     const changeElement = () =>{
         setIsCheckOut(true);
     }
