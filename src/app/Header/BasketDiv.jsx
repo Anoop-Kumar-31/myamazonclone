@@ -2,20 +2,21 @@ import css from './Header.module.css'
 import React from 'react';
 import { Basket, checkoutContext } from '../page';
 export default function BasketDiv(){
-    // const {BasketData, setBasketData} = Basket();
+    // const {basketData, setBasketData} = Basket();
     // const {isCheckOut, setIsCheckOut} = checkoutContext();
     // const len=0; //sample value
-    const {basketData}= Basket!=undefined? Basket():{basketData:[]};
-    const {setIsCheckOut }= checkoutContext!=undefined? checkoutContext():{setIsCheckOut:()=>{}};
-    const len=basketData.length;
+    // const {basketData}= Basket!=undefined? Basket():{basketData:[]};
+    // const {setIsCheckOut }= checkoutContext!=undefined? checkoutContext():{setIsCheckOut:()=>{}};
+    // const len=basketData.length;
     const changeElement = () =>{
-        setIsCheckOut(true);
+        // setIsCheckOut(true);
     }
     return(
-        <a onClick={changeElement}>
-        {/* <a> */}
-            <div className={css.inner} onClick={(e)=>{e.preventDefault()}}>
-            {/* <div className={css.inner}> */}
+        <a>
+            <div className={css.inner}>
+            
+        {/* <a onClick={changeElement}>
+            <div className={css.inner} onClick={(e)=>{e.preventDefault()}}> */}
                 <p>{len}</p>
                 <p>Cart</p>
             </div>
