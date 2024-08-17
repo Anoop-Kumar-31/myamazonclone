@@ -1,15 +1,15 @@
 'use client';
 import css from './CheckOut.module.css';
 import { useRouter } from 'next/navigation'
-// import {Basket} from '../../page';
+import {Basket} from '../../page';
 import {auth} from '../../Login/firebasesection';
 export default function CheckOut(){
-    // const {BasketData,setBasketData} = Basket();
+    const {basketData,setBasketData} = Basket();
     const router = useRouter();
     const user = auth.currentUser;
-    // console.log(BasketData);
+    console.log(BasketData);
     const clearBasket = ()=>{
-        // setBasketData([]);
+        setBasketData([]);
         localStorage.clear();
     }
     const handleBuy = ()=>{
@@ -19,10 +19,10 @@ export default function CheckOut(){
             router.push('/Login');
         }
     }
-    // const total=BasketData.reduce((acc,curr)=>acc+Number(curr.cost),0);
-    // const percentage = Math.round((total /499)*100>100?100:(total /499)*100);
-    const BasketData = []; //sample value
-    const percentage = 50; //sample value
+    const total=BasketData.reduce((acc,curr)=>acc+Number(curr.cost),0);
+    const percentage = Math.round((total /499)*100>100?100:(total /499)*100);
+    // const BasketData = []; //sample value
+    // const percentage = 50; //sample value
     return(
         <div className={css.checkOut}>
             {BasketData.length > 0 ? (
@@ -88,7 +88,7 @@ export default function CheckOut(){
                 
                 {percentage==100?<p>Eligible for Free Delivery.</p>:<p>₹{499-total} more needed for free Delivery.</p>}
 
-                <h3>Subtotal &#40;{BasketData.length}&#41;: <b>{"₹"+total}</b></h3>
+                <h3>Subtotal &#40;{basketData.length}&#41;: <b>{"₹"+total}</b></h3>
                 <button onClick={handleBuy}>Proceed to Buy</button>
                 <button onClick={clearBasket}>Clear Basket</button>
             </aside>
