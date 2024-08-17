@@ -1,5 +1,5 @@
 import css from './Header.module.css'
-import { Basket} from '../page';
+// import { Basket} from '../page';
 import { useContext } from 'react';
 import { Basket, checkoutContext } from '../page';
 export default function BasketDiv(){
