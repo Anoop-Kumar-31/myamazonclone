@@ -1,21 +1,19 @@
 'use client';
 import styles from "./page.module.css";
 import Header from "./Header/page";
-// import FrontPage from "./Header/FrontPage/page";
-// import { useState, createContext, useEffect } from "react";
 
+import MyContextProvider from "./MyContextProvider";
 import {useContext} from "react";
-import { mycheckoutContext,myBasket } from "./context";
-import MyContextProvider from "./context";
+import { mycheckoutContext,myBasket } from "./MyContextProvider";
 
 
 export default function Home() {
   return (
+    <main className={styles.main}>
       <MyContextProvider>
-        <main className={styles.main}>
           <Header/>
-        </main>
       </MyContextProvider>
+    </main>
   );
 }
 

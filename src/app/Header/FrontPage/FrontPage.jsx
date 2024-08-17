@@ -1,3 +1,4 @@
+'use client';
 import Blocks from './Blocks/Blocks';
 import Cards from './Cards/Cards';
 import Slider from './Slider';
