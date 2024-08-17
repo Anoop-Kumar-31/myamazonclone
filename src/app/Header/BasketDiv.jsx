@@ -1,22 +1,22 @@
 import css from './Header.module.css'
-// import { Basket} from '../page';
+import { Basket} from '../page';
 import { useContext } from 'react';
 import { Basket, checkoutContext } from '../page';
 export default function BasketDiv(){
     // const {BasketData, setBasketData} = Basket();
-    const {BasketData, setBasketData}= Basket!=undefined? Basket():{BasketData:false, setBasketData:()=>{}};
+    const {basketData, setBasketData}= Basket!=undefined? Basket():{basketData:[], setBasketData:()=>{}};
     const {isCheckOut, setIsCheckOut }= checkoutContext!=undefined? checkoutContext():{isCheckOut:false, setIsCheckOut:()=>{}};
     // const {isCheckOut, setIsCheckOut} = checkoutContext();
-    // const len=BasketData.length;
-    const len=0; //sample value
-    // const changeElement = () =>{
-    //     setIsCheckOut(true);
-    // }
+    const len=basketData.length;
+    // const len=0; //sample value
+    const changeElement = () =>{
+        setIsCheckOut(true);
+    }
     return(
-        // <a onClick={changeElement}>
-        <a>
-            {/* <div className={css.inner} onClick={(e)=>{e.preventDefault()}}> */}
-            <div className={css.inner}>
+        <a onClick={changeElement}>
+        {/* <a> */}
+            <div className={css.inner} onClick={(e)=>{e.preventDefault()}}>
+            {/* <div className={css.inner}> */}
                 <p>{len}</p>
                 <p>Cart</p>
             </div>
