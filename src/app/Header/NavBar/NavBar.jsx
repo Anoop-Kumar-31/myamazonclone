@@ -1,5 +1,7 @@
 'use client';
 import { IoMenuSharp, IoClose } from "react-icons/io5";
+
+
 import css from "./NavBar.module.css";
 import { useState } from "react";
 import Link from "next/link";
@@ -22,10 +24,10 @@ export default function NavBar() {
                                             return(
                                                 <div key={index} className={css.head}>
                                                     <h4>{key}</h4>
-                                                    <ul>
+                                                    <ul className="ul">
                                                         {obj[key].map((item,index)=>{
                                                             return(
-                                                                item=="Sign In"?<Link href="/Login"><li key={index}>{item}</li></Link>:<li key={index}>{item}</li>
+                                                                item=="Sign In"?<Link className="Link" href="/Login"><li key={index}>{item}</li></Link>:<li key={index}>{item}</li>
                                                             )
                                                         })}
                                                     </ul>

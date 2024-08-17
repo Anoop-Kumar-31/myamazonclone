@@ -1,4 +1,5 @@
 import css from './Header.module.css'
+import { CgShoppingCart } from "react-icons/cg";
 import React from 'react';
 import { Basket, checkoutContext } from '../page';
 export default function BasketDiv(){
@@ -11,8 +12,9 @@ export default function BasketDiv(){
     return(
         <a onClick={changeElement}>
             <div className={css.inner} onClick={(e)=>{e.preventDefault()}}>
-                <p>{len}</p>
-                <p>Cart</p>
+                <CgShoppingCart />
+                <p className={css.counter}>{len}</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cart</p>
             </div>
         </a>
     )

@@ -11,7 +11,7 @@
     /* justify-content: start; */
     background-color: #131921;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 5px 10px 20px;
 }
 .header_logo{
     display: flex;
@@ -26,15 +26,35 @@
 .info{
     display: flex;
     align-items: center;
-    padding: 0% 1%;
+    padding: 0% 0% 0% 1%;
     height: inherit;
     width: 30%;
     /* gap: 20px; */
     justify-content: space-around;
 }
+.inner>svg{
+    position: absolute;
+    transform: scale(2.5) translateY(4.5px);
+}
 .inner>h4{
     font-size: 12px;
     font-weight: 400;
+}
+.inner>.counter{
+    width: fit-content;
+    margin-left: 0.1px;
+    padding: 5px 5px 0 5px;
+    /* padding: 5px 10px 0 5px; */
+    /* border-radius: 20px; */
+    border-radius: 0 0 20px 20px;
+    /* border-radius: 20px 0px 0px 20px; */
+    position: relative;
+    background-color: #131921;
+    z-index: 0 !important;
+}
+.inner>.counter~p{
+    z-index: 999 !important;
+    transform: translateY(-10px);
 }
 .inner>p{
     font-size: 15px;
