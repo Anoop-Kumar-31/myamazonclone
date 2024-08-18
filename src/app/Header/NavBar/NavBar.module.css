@@ -18,7 +18,7 @@
     color: white;
     padding: 9px 10px;
 }
-.ulli:hover{
+.ul li:hover{
     box-shadow: inset 0 0 0px 1px #ffffff;
     border-radius: 3px; 
 }
