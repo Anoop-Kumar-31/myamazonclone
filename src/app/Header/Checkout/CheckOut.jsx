@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 import css from './CheckOut.module.css';
 import { useRouter } from 'next/navigation'
 import {Basket} from '../../page';
