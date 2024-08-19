@@ -1,10 +1,9 @@
-'use client';
 import Basket from './page';
-export default function GetBasket(){
+export default function(){
     try{
         const {basketData, setBasketData}= Basket();
         return {basketData,setBasketData};
     }catch(e){
-        return {basketData: [], setBasketData: () => {}}
+        return {basketData:[],setBasketData:()=>{}}
     }
 }

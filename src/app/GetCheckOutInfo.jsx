@@ -1,4 +1,3 @@
-'use client'
 import { checkoutContext } from './page';
 export default function GetCheckOutInfo(){
     try{
