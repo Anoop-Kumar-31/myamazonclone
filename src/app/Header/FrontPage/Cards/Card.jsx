@@ -1,10 +1,8 @@
 
 import css from './Cards.module.css'
 import { Basket } from '../../../page';
-import GetBasket from '@/app/GetBasket';
 export default function Card({image,name,cost}) {
-    // const {basketData, setBasketData} = Basket!=undefined?Basket():{BasketData:[], setBasketData:()=>{}};
-    const {basketData, setBasketData} =  GetBasket();
+    const {basketData, setBasketData} = Basket!=undefined?Basket():{BasketData:[], setBasketData:()=>{}};
     const addtocart = () =>{
         setBasketData([...basketData,{image,name,cost}]);
         window.localStorage.setItem('BasketData',JSON.stringify([...basketData,{image,name,cost}]));

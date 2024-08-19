@@ -1,12 +1,10 @@
-// 'use client';
+'use client';
 import css from './CheckOut.module.css';
 import { useRouter } from 'next/navigation'
 import {Basket} from '../../page';
 import {auth} from '../../Login/firebasesection';
-import GetBasket from '@/app/GetBasket';
 export default function CheckOut(){
-    // const {basketData,setBasketData} = Basket!=undefined?Basket():{basketData:[],setBasketData:()=>{}};
-    const {basketData,setBasketData} = GetBasket();
+    const {basketData,setBasketData} = Basket!=undefined?Basket():{basketData:[],setBasketData:()=>{}};
     const router = useRouter();
     const user = auth.currentUser;
     console.log(basketData);
