@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 import css from './CheckOut.module.css';
 import { useRouter } from 'next/navigation'
 import {Basket} from '../../page';
@@ -7,20 +7,20 @@ import GetBasket from '@/app/GetBasket';
 export default function CheckOut(){
     // const {basketData,setBasketData} = Basket!=undefined?Basket():{basketData:[],setBasketData:()=>{}};
     const {basketData,setBasketData} = GetBasket();
-    const router = useRouter();
+    // const router = useRouter();
     const user = auth.currentUser;
     console.log(basketData);
-    const clearBasket = ()=>{
-        setBasketData([]);
-        localStorage.clear();
-    }
-    const handleBuy = ()=>{
-        if(user){
-            router.push('/Payment');
-        }else{
-            router.push('/Login');
-        }
-    }
+    // const clearBasket = ()=>{
+    //     setBasketData([]);
+    //     localStorage.clear();
+    // }
+    // const handleBuy = ()=>{
+    //     if(user){
+    //         router.push('/Payment');
+    //     }else{
+    //         router.push('/Login');
+    //     }
+    // }
     const total=basketData.reduce((acc,curr)=>acc+Number(curr.cost),0);
     const percentage = Math.round((total /499)*100>100?100:(total /499)*100);
     // const BasketData = []; //sample value
@@ -91,8 +91,10 @@ export default function CheckOut(){
                 {percentage==100?<p>Eligible for Free Delivery.</p>:<p>₹{499-total} more needed for free Delivery.</p>}
 
                 <h3>Subtotal &#40;{basketData.length}&#41;: <b>{"₹"+total}</b></h3>
-                <button onClick={handleBuy}>Proceed to Buy</button>
-                <button onClick={clearBasket}>Clear Basket</button>
+                <ButtonMaker string='Proceed to Buy' function='handleBuy'/>
+                <ButtonMaker string="Clear Basket" fucntion='clearBasket'/>
+                {/* <button onClick={handleBuy}>Proceed to Buy</button>
+                <button onClick={clearBasket}>Clear Basket</button> */}
             </aside>
         </div>
     )
