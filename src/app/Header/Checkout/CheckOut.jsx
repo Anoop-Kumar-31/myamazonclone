@@ -8,21 +8,24 @@ export default function CheckOut(){
     const router = useRouter();
     const user = auth.currentUser;
     console.log(basketData);
+    const total=basketData.reduce((acc,curr)=>acc+Number(curr.cost),0);
+    const percentage = Math.round((total /499)*100>100?100:(total /499)*100);
+    // const BasketData = []; //sample value
+    // const percentage = 50; //sample value
     const clearBasket = ()=>{
         setBasketData([]);
         localStorage.clear();
     }
     const handleBuy = ()=>{
-        if(user){
-            router.push('/Payment');
-        }else{
+        if(user && total>0){
+            router.push('/Header/Payment');
+        }else if(user && total==0){
+            alert('Add items to the basket to proceed');
+        }
+        else{
             router.push('/Login');
         }
     }
-    const total=basketData.reduce((acc,curr)=>acc+Number(curr.cost),0);
-    const percentage = Math.round((total /499)*100>100?100:(total /499)*100);
-    // const BasketData = []; //sample value
-    // const percentage = 50; //sample value
     return(
         <div className={css.checkOut}>
             {basketData.length > 0 ? (
@@ -56,19 +59,6 @@ export default function CheckOut(){
                         <div>
                             <h1>Your Amazon Cart is empty</h1>
                             <p>Your shopping cart is waiting. Give it purpose to fill it with groceries, clothing, household supplies, electronics and more.</p>
-                            {/* {user?
-                            [
-                                <h1>Your Amazon Cart is empty</h1>,
-                                <p>Your shopping cart is waiting. Give it purpose to fill it with groceries, clothing, household supplies, electronics and more.</p>
-                            ]:
-                            [
-                                <h1>Please Login to view Cart items.</h1>,
-                                <p>Your shopping cart is waiting. Login and order the item you choosed.</p>,
-                                <div>
-                                    <a href='/Login'><button > Sign in to your account</button></a>
-                                    <a href="/Login"><button href='/Login'> Sign up now</button></a>
-                                </div>
-                            ]} */}
                             {user?"":<div>
                                 <a href='/Login'><button > Sign in to your account</button></a>
                                 <a href="/Login"><button href='/Login'> Sign up now</button></a>
@@ -78,7 +68,6 @@ export default function CheckOut(){
                 )
             }
             <aside className={css.subTotalSection}>
-                {/* progress bar */}
                 <div>
                     <div className={css.progressBar}>
                         <div className={css.progress} style={{width:`${percentage}%`}}></div>
