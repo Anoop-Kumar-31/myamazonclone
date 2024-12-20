@@ -12,7 +12,7 @@
     border: none;
     position: absolute;
     font-size: xx-large;
-    display: flex;
+    display: block;
     padding: 30px;
     align-items: center;
     height: 300px;
@@ -29,40 +29,19 @@
 .next{
     right: 0;
 }
-.panel>img{
+.slideImage{
     width: 100vw;
-    /* width: clamp(1280px, 180vw, 1920px); */
-    /* height: auto; */
+    height: 100vh;
     transition: 300ms ease-in-out;
     z-index: -1;
-    /* filter: blur(0px); */
 }
 
 .panel{
     box-shadow: inset 0 -200px 50px -100px #E3E6E6;
-    position: relative;
+    /* position: relative; */
     display: flex;
+    flex-direction: row;
     width: 100vw;
     height: 614.5px;
-    overflow-x: hidden;
-    /* position: relative; */
-    /* transition: 1s; */
-}
-
-@keyframes animateBack {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(-98.5vw);
-    }
-}
-
-@keyframes animateFront {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(98.5vw);
-    }
+    overflow: hidden;
 }

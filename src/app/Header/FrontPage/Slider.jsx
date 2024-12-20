@@ -64,7 +64,7 @@ export default function Slider() {
           <img
             key={index}
             src={img}
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }} // Position based on index
+            style={{ transform: `translateX(-${currentIndex * 100}%)`}} // Position based on index
             className={css.slideImage} // Add class for potential styling
           />
         ))}

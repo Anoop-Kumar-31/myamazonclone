@@ -1,9 +1,16 @@
+'use client';
 import css from './Payment.module.css';
 import { PiLockSimpleFill } from "react-icons/pi";
 import { FaPlus } from "react-icons/fa";
 import Image from 'next/image';
+import {Basket} from '../../page';
+
 export default function Payment(){
     const netBankingList = ["Airtel Payments Bank", "Axis Bank","HDFC Bank","ICICI Bank","IDBI Bank","IndusInd Bank","Kotak Mahindra Bank","Punjab National Bank","State Bank of India","Union Bank of India","Yes Bank","Allahabad Bank","Andhra Bank","Bank of Baroda","Bank of India","Bank of Maharashtra","Canara Bank","Central Bank of India","Corporation Bank","Dena Bank","Indian Bank","Indian Overseas Bank","Oriental Bank of Commerce","Punjab & Sind Bank","Syndicate Bank","UCO Bank","United Bank of India","Vijaya Bank","Bandhan Bank","Catholic Syrian Bank","City Union Bank","DCB Bank","Dhanlaxmi Bank","Federal Bank","IDFC First Bank","Jammu and Kashmir Bank","Karur Vysya Bank","Karnataka Bank","Karur Vysya Bank","Lakshmi Vilas Bank","Nainital Bank","RBL Bank","South Indian Bank","Tamilnad Mercantile Bank","Ujjivan Small Finance Bank","Equitas Small Finance Bank","AU Small Finance Bank","Fincare Small Finance Bank","Suryoday Small Finance Bank","Utkarsh Small Finance Bank"]
+    const {basketData} = Basket!=undefined?Basket():{basketData:[]};
+    
+    const total=basketData!=undefined?basketData.reduce((acc,curr)=>acc+Number(curr.cost),0):0;
+
     return(
         <main className={css.Payment}>
             <header>
@@ -67,15 +74,14 @@ export default function Payment(){
                                         <hr/>
                                         <address className={css.paymentMethod}>
                                             <input type="radio" name="payment" id="netBanking" />
-                                            <label htmlFor="netBanking">Credit or debit card<br/>
-                                                <div style={{display:'flex',marginTop:"10px"}}>
-                                                    <img src="https://www.takeonedigitalnetwork.com/wp-content/uploads/2023/05/ANI-20230510053652-thumbnail-320x180-70.jpg" alt="" />
-                                                    <img src="https://www.takeonedigitalnetwork.com/wp-content/uploads/2023/05/ANI-20230510053652-thumbnail-320x180-70.jpg" alt="" />
-                                                    <img src="https://www.takeonedigitalnetwork.com/wp-content/uploads/2023/05/ANI-20230510053652-thumbnail-320x180-70.jpg" alt="" />
-                                                    <img src="https://www.takeonedigitalnetwork.com/wp-content/uploads/2023/05/ANI-20230510053652-thumbnail-320x180-70.jpg" alt="" />
-                                                    <img src="https://www.takeonedigitalnetwork.com/wp-content/uploads/2023/05/ANI-20230510053652-thumbnail-320x180-70.jpg" alt="" />
-                                                </div>
-                                            </label>
+                                            <label htmlFor="netBanking">Credit or debit card</label>
+                                            <div style={{display:'flex',marginTop:"10px"}}>
+                                                <img src="https://www.takeonedigitalnetwork.com/wp-content/uploads/2023/05/ANI-20230510053652-thumbnail-320x180-70.jpg" alt="" />
+                                                <img src="https://static-00.iconduck.com/assets.00/mastercard-icon-256x164-t4e2lyqm.png" alt="" />
+                                                <img src="https://cdn.iconscout.com/icon/free/png-256/free-diners-club-international-logo-icon-download-in-svg-png-gif-file-formats--payment-method-logos-pack-icons-675719.png?f=webp&w=256" alt="" />
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq0eXmomEYLPuOiah3Eij-JLhuOkkkepUueg&s" alt="" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Rupay-Logo.png" alt="" />
+                                            </div>
                                         </address>
                                         
                                         <address className={css.paymentMethod}>
@@ -94,6 +100,14 @@ export default function Payment(){
                                         <address className={css.paymentMethod}>
                                             <input type="radio" name="payment" id="upi" />
                                             <label htmlFor="upi">Other UPI Apps</label>
+                                            <div className={css.upi}>
+                                                Please enter Your UPI ID
+                                                <section>
+                                                    <input type="text" placeholder="Enter UPI ID" />
+                                                    <button>Verify</button>
+                                                </section>
+                                                The UPI ID is in the format of name/phone number@bankname
+                                            </div>
                                         </address>
                                         <address className={css.paymentMethod}>
                                             <input type="radio" name="payment" id="cod" />
@@ -106,7 +120,30 @@ export default function Payment(){
                     </div>
                 </div>
                 <div className={css.orderSummary}>
-
+                    <button>Use this payment method</button>
+                    <h3>Order Summary</h3>
+                    <div className={css.orderSummaryItems}>
+                        <div>
+                            <p>Items:</p>
+                            <p>--</p>
+                        </div>
+                        <div>
+                            <p>Delivery:</p>
+                            <p>--</p>
+                        </div>
+                        <div>
+                            <p>Total:</p>
+                            <p>--</p>
+                        </div>
+                        <div>
+                            <p>Promotion Applied:</p>
+                            <p>--</p>
+                        </div>
+                        <div style={{borderTop:"1px solid lightgrey",paddingTop:"20px"}}>
+                            <h2>Order Total: </h2>
+                            <h2>{total}</h2>
+                        </div>
+                    </div>
                 </div>
                 </div>
             </section>

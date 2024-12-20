@@ -7,7 +7,7 @@ export default function CheckOut(){
     const {basketData,setBasketData} = Basket!=undefined?Basket():{basketData:[],setBasketData:()=>{}};
     const router = useRouter();
     const user = auth.currentUser;
-    console.log(basketData);
+    console.log(basketData.length);
     const total=basketData.reduce((acc,curr)=>acc+Number(curr.cost),0);
     const percentage = Math.round((total /499)*100>100?100:(total /499)*100);
     // const BasketData = []; //sample value

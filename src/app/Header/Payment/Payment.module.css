@@ -147,6 +147,7 @@
 .paymentMethod img{
     width: 43px;
     height: 30px;
+    background-color: white;
     /* border: grey 1px solid; */
     box-shadow: 0px 0px 1.5px 1px #787878;
     border-radius: 3px;
@@ -173,4 +174,67 @@
 }
 .addressList{
     margin-left: 29px;
+}
+
+.upi{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap:10px;
+}
+.upi input{
+    padding: 7px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+.upi button{
+    padding: 7px 14px;
+    border-radius: 100px;
+    border: none;
+    margin-left: 1vw;
+    background-color: #ffd814;
+    font-weight: bold;
+    text-align: center;
+}
+
+.upi button:hover{
+    filter: brightness(0.95);
+}
+.address address:has(input[type="radio"]:not(:checked)) div{
+    display: none;
+}
+
+.orderSummary button{
+    background-color: #ffd814;
+    font-weight: bold;
+    border: none;
+    color: #111;
+    padding: 10px 20px;
+    border-radius: 500px;
+}
+.orderSummary{
+    margin-top: 32px;
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: clamp(250px,15%, 1500px);
+    padding:30px;
+    border: 1px solid #d5d9d9;
+    border-radius: 10px;
+    height: fit-content;
+    gap: 15px;
+}
+
+.orderSummaryItems{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: normal;
+}
+.orderSummaryItems div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
