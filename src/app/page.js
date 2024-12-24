@@ -16,7 +16,7 @@ export default function Home() {
       </MyContextProvider>
   );
 }
-console.log(process.env.apiKey);
+// console.log(process.env.apiKey);
 
 export const checkoutContext= ()=> useContext(mycheckoutContext);
 export const Basket= ()=>useContext(myBasket);

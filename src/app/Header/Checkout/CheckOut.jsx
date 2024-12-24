@@ -16,16 +16,26 @@ export default function CheckOut(){
         setBasketData([]);
         localStorage.clear();
     }
-    const handleBuy = ()=>{
-        if(user && total>0){
-            router.push('/Header/Payment');
-        }else if(user && total==0){
-            alert('Add items to the basket to proceed');
+    function addPathPrefix(path, prefix) {
+        if (typeof path !== 'string') {
+            console.error('Path is not a string:', path);
+            return path;
         }
-        else{
+        if (path.startsWith(prefix)) {
+            return path;
+        }
+        return prefix + path;
+    }
+    const handleBuy = () => {
+        if (user && total > 0) {
+            const encodedBasketData = encodeURIComponent(JSON.stringify(basketData));
+            router.push(`/Header/Payment?total=${total}&basketData=${encodedBasketData}`);
+        } else if (user && total == 0) {
+            alert('Add items to the basket to proceed');
+        } else {
             router.push('/Login');
         }
-    }
+    };
     return(
         <div className={css.checkOut}>
             {basketData.length > 0 ? (

@@ -3,19 +3,21 @@ import css from './Payment.module.css';
 import { PiLockSimpleFill } from "react-icons/pi";
 import { FaPlus } from "react-icons/fa";
 import Image from 'next/image';
-import {Basket} from '../../page';
+import { useSearchParams } from 'next/navigation';
 
-export default function Payment(){
-    const netBankingList = ["Airtel Payments Bank", "Axis Bank","HDFC Bank","ICICI Bank","IDBI Bank","IndusInd Bank","Kotak Mahindra Bank","Punjab National Bank","State Bank of India","Union Bank of India","Yes Bank","Allahabad Bank","Andhra Bank","Bank of Baroda","Bank of India","Bank of Maharashtra","Canara Bank","Central Bank of India","Corporation Bank","Dena Bank","Indian Bank","Indian Overseas Bank","Oriental Bank of Commerce","Punjab & Sind Bank","Syndicate Bank","UCO Bank","United Bank of India","Vijaya Bank","Bandhan Bank","Catholic Syrian Bank","City Union Bank","DCB Bank","Dhanlaxmi Bank","Federal Bank","IDFC First Bank","Jammu and Kashmir Bank","Karur Vysya Bank","Karnataka Bank","Karur Vysya Bank","Lakshmi Vilas Bank","Nainital Bank","RBL Bank","South Indian Bank","Tamilnad Mercantile Bank","Ujjivan Small Finance Bank","Equitas Small Finance Bank","AU Small Finance Bank","Fincare Small Finance Bank","Suryoday Small Finance Bank","Utkarsh Small Finance Bank"]
-    const {basketData} = Basket!=undefined?Basket():{basketData:[]};
-    
-    const total=basketData!=undefined?basketData.reduce((acc,curr)=>acc+Number(curr.cost),0):0;
+export default function Payment() {
+    const netBankingList = ["Airtel Payments Bank", "Axis Bank", "HDFC Bank", "ICICI Bank", "IDBI Bank", "IndusInd Bank", "Kotak Mahindra Bank", "Punjab National Bank", "State Bank of India", "Union Bank of India", "Yes Bank", "Allahabad Bank", "Andhra Bank", "Bank of Baroda", "Bank of India", "Bank of Maharashtra", "Canara Bank", "Central Bank of India", "Corporation Bank", "Dena Bank", "Indian Bank", "Indian Overseas Bank", "Oriental Bank of Commerce", "Punjab & Sind Bank", "Syndicate Bank", "UCO Bank", "United Bank of India", "Vijaya Bank", "Bandhan Bank", "Catholic Syrian Bank", "City Union Bank", "DCB Bank", "Dhanlaxmi Bank", "Federal Bank", "IDFC First Bank", "Jammu and Kashmir Bank", "Karur Vysya Bank", "Karnataka Bank", "Karur Vysya Bank", "Lakshmi Vilas Bank", "Nainital Bank", "RBL Bank", "South Indian Bank", "Tamilnad Mercantile Bank", "Ujjivan Small Finance Bank", "Equitas Small Finance Bank", "AU Small Finance Bank", "Fincare Small Finance Bank", "Suryoday Small Finance Bank", "Utkarsh Small Finance Bank"];
+
+    const searchParams = useSearchParams();
+    const total = searchParams.get('total');
+    const basketData = JSON.parse(decodeURIComponent(searchParams.get('basketData')));
+    const productCount = basketData.length;
 
     return(
         <main className={css.Payment}>
             <header>
                 <div className={css.headerDiv}>
-                    <Image src="/images/amazon_logo.png" width={105} height={31} className={css.logo}></Image>
+                    <Image src="/images/amazon_logo.png" width={105} height={31} className={css.logo} alt='logo'></Image>
                     <h1>Checkout</h1>
                     <div className={css.lock}><PiLockSimpleFill /></div>
                 </div>
@@ -125,19 +127,19 @@ export default function Payment(){
                     <div className={css.orderSummaryItems}>
                         <div>
                             <p>Items:</p>
-                            <p>--</p>
+                            <p>{productCount}</p>
                         </div>
                         <div>
                             <p>Delivery:</p>
-                            <p>--</p>
+                            <p>{total>=499?0:100}</p>
                         </div>
                         <div>
                             <p>Total:</p>
-                            <p>--</p>
+                            <p>{total}</p>
                         </div>
                         <div>
                             <p>Promotion Applied:</p>
-                            <p>--</p>
+                            <p>None</p>
                         </div>
                         <div style={{borderTop:"1px solid lightgrey",paddingTop:"20px"}}>
                             <h2>Order Total: </h2>
