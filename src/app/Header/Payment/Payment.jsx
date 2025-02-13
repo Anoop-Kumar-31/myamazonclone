@@ -1,19 +1,19 @@
 'use client';
+import React, { Suspense } from 'react';
 import css from './Payment.module.css';
 import { PiLockSimpleFill } from "react-icons/pi";
 import { FaPlus } from "react-icons/fa";
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
-export default function Payment() {
-    const netBankingList = ["Airtel Payments Bank", "Axis Bank", "HDFC Bank", "ICICI Bank", "IDBI Bank", "IndusInd Bank", "Kotak Mahindra Bank", "Punjab National Bank", "State Bank of India", "Union Bank of India", "Yes Bank", "Allahabad Bank", "Andhra Bank", "Bank of Baroda", "Bank of India", "Bank of Maharashtra", "Canara Bank", "Central Bank of India", "Corporation Bank", "Dena Bank", "Indian Bank", "Indian Overseas Bank", "Oriental Bank of Commerce", "Punjab & Sind Bank", "Syndicate Bank", "UCO Bank", "United Bank of India", "Vijaya Bank", "Bandhan Bank", "Catholic Syrian Bank", "City Union Bank", "DCB Bank", "Dhanlaxmi Bank", "Federal Bank", "IDFC First Bank", "Jammu and Kashmir Bank", "Karur Vysya Bank", "Karnataka Bank", "Karur Vysya Bank", "Lakshmi Vilas Bank", "Nainital Bank", "RBL Bank", "South Indian Bank", "Tamilnad Mercantile Bank", "Ujjivan Small Finance Bank", "Equitas Small Finance Bank", "AU Small Finance Bank", "Fincare Small Finance Bank", "Suryoday Small Finance Bank", "Utkarsh Small Finance Bank"];
+const netBankingList = ["Airtel Payments Bank", "Axis Bank", "HDFC Bank", "ICICI Bank", "IDBI Bank", "IndusInd Bank", "Kotak Mahindra Bank", "Punjab National Bank", "State Bank of India", "Union Bank of India", "Yes Bank", "Allahabad Bank", "Andhra Bank", "Bank of Baroda", "Bank of India", "Bank of Maharashtra", "Canara Bank", "Central Bank of India", "Corporation Bank", "Dena Bank", "Indian Bank", "Indian Overseas Bank", "Oriental Bank of Commerce", "Punjab & Sind Bank", "Syndicate Bank", "UCO Bank", "United Bank of India", "Vijaya Bank", "Bandhan Bank", "Catholic Syrian Bank", "City Union Bank", "DCB Bank", "Dhanlaxmi Bank", "Federal Bank", "IDFC First Bank", "Jammu and Kashmir Bank", "Karur Vysya Bank", "Karnataka Bank", "Karur Vysya Bank", "Lakshmi Vilas Bank", "Nainital Bank", "RBL Bank", "South Indian Bank", "Tamilnad Mercantile Bank", "Ujjivan Small Finance Bank", "Equitas Small Finance Bank", "AU Small Finance Bank", "Fincare Small Finance Bank", "Suryoday Small Finance Bank", "Utkarsh Small Finance Bank"];
 
+function PaymentContent() {
     const searchParams = useSearchParams();
     const total = searchParams.get('total');
     const basketData = JSON.parse(decodeURIComponent(searchParams.get('basketData')));
     const productCount = basketData.length;
-
-    return(
+    return (
         <main className={css.Payment}>
             <header>
                 <div className={css.headerDiv}>
@@ -150,5 +150,13 @@ export default function Payment() {
                 </div>
             </section>
         </main>
-    )
+    );
+}
+
+export default function Payment() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <PaymentContent />
+        </Suspense>
+    );
 }
