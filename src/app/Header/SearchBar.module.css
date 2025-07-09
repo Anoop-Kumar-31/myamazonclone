@@ -3,7 +3,8 @@
     align-items: center;
     margin: 0.14% 1.5%;
     height: inherit;
-    width: 60%;
+    flex-grow: 1;
+    min-width: 300px;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -20,7 +21,6 @@
 }
 .search_input::placeholder{
     font-weight: 500;
-    /* font-size: larger; */
 }
 .search_input::marker{
     height: 20px;

@@ -1,12 +1,27 @@
 'use client';
 import { IoMenuSharp, IoClose } from "react-icons/io5";
-
-
+import { auth } from "../../Login/firebasesection";
 import css from "./NavBar.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 export default function NavBar() {
     const list=[{"Digital Content":["Amazon Music","Kindle E-readers & Books","Amazon Appstore"]},{"Shop By Department":["Electronics","Computers","Smart Home","Arts & Crafts"]},{"Programs & Features":["Gift Cards","Amazon Live","Amazon Explore"]},{"Help & Settings":["Your Account","Customer Service","Sign In"]}];
+    const user = auth.currentUser;
+    
+    const logout = () => {
+        if (user) {
+            auth.signOut();
+            alert("You have been signed out");
+            reload();
+        }
+    }
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(authUser => {
+            console.log("user is >> ", !authUser);
+        });
+        return () => unsubscribe();
+    }, [auth]);
+
     const [ham,setHam] = useState(false);
     return (
         <>
@@ -27,7 +42,10 @@ export default function NavBar() {
                                                     <ul className="ul">
                                                         {obj[key].map((item,index)=>{
                                                             return(
-                                                                item=="Sign In"?<Link className="Link" href="/Login"><li key={index}>{item}</li></Link>:<li key={index}>{item}</li>
+                                                                item=="Sign In"?
+                                                                <Link className="Link" href={user?"/":"/Login"} onClick={ user?logout:undefined}><li key={index}>{user?"Sign Out":"Sign In"}</li></Link>
+                                                                :
+                                                                <li key={index}>{item}</li>
                                                             )
                                                         })}
                                                     </ul>

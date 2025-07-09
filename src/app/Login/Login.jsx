@@ -4,7 +4,6 @@ import css from "./Login.module.css";
 import { auth } from "./firebasesection";
 import { useRouter } from 'next/navigation';
 import {
-    getAuth,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
 } from "firebase/auth";

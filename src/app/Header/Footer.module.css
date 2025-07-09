@@ -1,0 +1,120 @@
+.footer {
+    background-color: #232f3e;
+    color: #fff;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 40px;
+}
+
+.backToTop {
+    background: #37475a;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 13px;
+}
+.backToTop a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footerMain {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px 0 20px 0;
+    border-bottom: 1px solid #3a4553;
+    flex-wrap: wrap;
+}
+.footerColumn {
+    min-width: 180px;
+}
+.footerColumn h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.footerColumn ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footerColumn li {
+    margin-bottom: 10px;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.footerColumn li:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footerLogoRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 24px 0 16px 0;
+    border-bottom: 1px solid #3a4553;
+}
+.footerLogo {
+    height: 40px;
+}
+.footerSelectors {
+    display: flex;
+    gap: 12px;
+}
+.selectorBtn {
+    background: #232f3e;
+    color: #fff;
+    border: 1px solid #848688;
+    border-radius: 3px;
+    padding: 6px 18px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+}
+.selectorBtn:hover {
+    background: #37475a;
+}
+
+.footerLinksRow {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 24px 0 16px 0;
+    flex-wrap: wrap;
+    background-color: #131A22;
+}
+.footerLinksCol {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 180px;
+    color: #ddd;
+    font-size: 11px;
+}
+.footerLinksCol b {
+    color: #fff;
+    font-size: 11px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 16px 0 8px 0;
+    color: #bbb;
+    font-size: 11px;
+    background-color: #131A22;
+}
+
+
+@media screen and (max-width: 768px) {
+    .footerLogoRow{
+        flex-direction: column;
+        align-items: center;
+    }
+}
